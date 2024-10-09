@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Diabeties</title>
+    <link rel="stylesheet" href="/staticfiles/style.css">
+</head>
+<body>
+    <form action="{{url_for('predict')}}" method="post"></form>
+
+        <input type="text" name="trtbps" id="research" placeholder="Blood Pressure in mm Hg">
+        <input type="text" name="chol" id="research" placeholder="Cholesterol level in mg/dl">
+        <input type="text" name="thalachh" id="research" placeholder=" Maximum Heart Rate Achieved">
+        <input type="text" name="oldpeak" id="research" placeholder="ST Depression Induced by Exercise">
+        <input type="text" name="caa" id="research" placeholder=" Number of Major Vessels (0-3) Colored by Fluoroscopy">
+    
+        <h3> SEX </h3>
+        <select name="sex" id="SEX">
+            <option value="0">Female</option>
+            <option value="1">Male</option>
+        </select>
+
+        <h3> Chest Pain Type </h3>
+        <select name="cp" id="cp">
+            <option value="0">Typical angina</option>
+            <option value="1">Atypical angina</option>
+            <option value="2">Non-anginal pain</option>
+            <option value="3">Asymptomatic</option>
+        </select>
+
+        <h3> Fasting Blood Sugar </h3>
+        <select name="fbs" id="fbs">
+            <option value="0">false</option>
+            <option value="1">true</option>
+        </select>
+
+        <h3>  Resting Electrocardiographic Results </h3>
+        <select name="restecg" id="restecg">
+            <option value="0">Normal</option>
+            <option value="1">Having ST-T wave abnormality</option>
+            <option value="3">Showing probable or definite left ventricular hypertrophy</option>
+        </select>
+
+        <h3> Exercise Induced Angina </h3>
+        <select name="exng" id="exng">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
+
+        <h3> Slope of the Peak Exercise ST Segment </h3>
+        <select name="slp" id="slp">
+            <option value="0">Upsloping</option>
+            <option value="1">Flat</option>
+            <option value="2">Downsloping</option>
+        </select>
+
+        <h3> Thalassemia </h3>
+        <select name="thall" id="thall">
+            <option value="0">Normal</option>
+            <option value="1">Fixed defect (no blood flow in some part of the heart)</option>
+            <option value="2">Reversible defect (a blood flow issue is present but can be reversed with treatment).</option>
+        </select>
+
+        <br>
+        <br>
+        <button type="submit" id="sub">Prediction</button>
+        
+    </form>
+
+    <br>
+    <br>
+    {{prediction_text}}
+</body>
+</html>
